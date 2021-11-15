@@ -118,10 +118,10 @@ console.log(result);
 
 // creating html template: ?? NOTE it can be added to the website instead of just printing it in the console!
 let html = `
-    <h2>${title}</h2>
-    <p>By ${author}</p>
-    <span>This blog has ${likes} likes</span>
-    `;
+	<h2>${title}</h2>
+	<p>By ${author}</p>
+	<span>This blog has ${likes} likes</span>
+	`;
 console.log(html);
 
 
@@ -215,8 +215,100 @@ console.log(result);
 console.log(typeof(result));
 
 //NOTE: What are function: lesson 30;
-// function:
-function greet(){
-    console.log("hello there");
+// function declaration:
+function greet(){ // the js key word function is used  to declare a function followed by the name of the function
+	console.log("hello there");
 }
-greet(); // calling the function/ invoking the function;
+greet(); // calling the function / invoking the function;
+
+// function expression:
+{
+	const speak = function(){
+	console.log('good day!');
+	}; // semicolon here;
+
+	speak();
+	speak();
+}
+
+// NOTE the function declaration and function expression are actually behaving the same way!  
+// but for function declaration hoisting make the function callable even before the declaration while function expression doesn't
+// tho function expression is a good behaviour while coding in js
+
+{
+	// function parameters
+	const speak = function(name = 'luigi'){
+		console.log(`good day ${name}`);
+	}
+
+	speak('mario');
+	speak();
+}
+
+
+{
+	// returning Values
+	const calcArea = function(radius){
+		// let area = 3.14 * radius**2;
+		// return area; we could either store this in a local variable then return it of simply:
+		return 3.14 * radius**2;
+	};
+	
+	console.log(calcArea(5));
+}
+
+{
+	// Arrow functions:
+	// in arrow function we don't use the "function" keyword instead parentheses are taking the parameters
+	const calcArea = (radius) => { // here is the arrow function version of the regular function expression
+		// here is the function boy
+		return 3.14 * radius**2;
+	};
+	console.log(calcArea(5));
+	// and this is actually can be simplified even more:
+	// when we only have one parameters, we can take away parenthese; otherwise (if there is no parameteres or more than one we obligaatory need it)
+}
+
+{
+	// practice: my code
+	// const greet = function(){
+	// 	return 'hello, world';
+	// } 
+	const greet = () => 'hello, world';
+	console.log(greet());
+
+	// const bill = function (product, tax){
+	// 	let total = 0;
+	// 	for (let i = 0; i < product.length; i++)
+	// 		total += product[i] + product[i] * tax;
+	// 	return total;
+	// }
+	const bill = (product, tax) => {
+		let total = 0;
+		for (let i = 0; i < product.length; i++)
+			total += product[i] + product[i] * tax;
+		return total;
+	}
+	console.log(bill([10, 15, 30], 0.2));
+}
+
+// NOTE: function vs method:
+{
+
+	// function is a block of code to do something that can be invoked in our code;
+
+	const welcome = () => 'hello';
+	
+	let resultOne = welcome();
+	console.log(resultOne);
+	
+	// methods: it is similar to function, tho it is related to a data type;
+	
+	const name = 'shaun';
+	let resultTwo = name.toUpperCase();
+	console.log(resultTwo);
+	
+}
+
+
+
