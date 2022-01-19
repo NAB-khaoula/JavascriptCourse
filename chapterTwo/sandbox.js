@@ -513,7 +513,8 @@ greet(); // calling the function / invoking the function;
 	console.log(classname); // we got an HTMLCollection
 	// the "Elements" are plural, it grabs all the element with the class name mentionned;
 	// NOTE get elements by their tag name:
-	const paras = document.getElementsByTagName('p');
+	const paras = document.getElementsByTagName('p'); // equivalent to querySelectorAll('.p')
+	// the querySelector returns a nodeList while get* return an HTMLCollection;
 	console.log(paras);
 }
 
