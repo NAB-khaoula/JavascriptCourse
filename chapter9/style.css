@@ -1,0 +1,98 @@
+
+body{
+    background: rgba(90,39,40,0.5);
+}
+
+.signupForm{
+    display: flex;
+    position: absolute;
+    left: 35%;
+    top: 15%;
+    flex-direction: column;
+    background-color:white;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 30%;
+    gap: 20px;
+}
+
+.signupForm input[type=text] {
+    width: 70%;
+    height: 15%;
+    background-color: rgba(220,220,220,0.2);
+    border: none;    
+    border-radius: 0px;
+    text-indent: 15px;
+}
+
+.signupForm button {
+    width: 70%;
+    height: 15%;
+    box-sizing: border-box;
+    background: rgba(90,39,40,0.5);
+    border-radius: 0px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+::placeholder{
+    color: #A9A9A9;
+    font-family: cursive;
+}
+
+
+.checkbox {
+    font-family: cursive;
+    font-size: 12px;
+}
+
+.checkbox span{
+    color: rgba(90,39,40,0.5);
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0%;
+    height: 0%;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkbox input:checked ~ .checkmark {
+  background-color: rgba(90,39,40,0.5);
+}
+
+/* @media only screen and (max-width: 600px), 
+screen and (max-height: 600px)
+{
+    .signupForm{
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        background-color:white;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        gap: 20px;
+    }
+} */
